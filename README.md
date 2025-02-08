@@ -62,6 +62,10 @@ Check out the example scripts in the `examples` folder:
 Example usage:
 
 ```bash
+python examples/pypi_downloads.py --display_type matplot --package_name pi_optimal
+```
+
+```bash
 python examples/github_star_stats.py \
   --display_type matplot \
   --github_api_key "xxx" \
