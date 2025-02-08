@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pixel_kpi"
-version = "0.1.0"
+version = "0.1.1"
 description = "Create pixel-art KPI dashboards with GitHub, Notion & PyPi data visualization for Pixoo displays and more 🎨📊✨"
 authors = ["Jochen Luithardt <jol@pi-optimal.com>"]
 readme = "README.md"
