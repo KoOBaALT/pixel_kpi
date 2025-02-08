@@ -17,6 +17,7 @@ numpy = "^2.1.1"
 pillow = "^10.4.0"
 matplotlib = "^3.9.2"
 pypistats = "^1.8.0"
+ipython = "^8.32.0"
 
 [tool.poetry.scripts]
 pixel_kpi = "pixel_kpi.__main__:main"
