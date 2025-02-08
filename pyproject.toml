@@ -5,6 +5,9 @@ description = "Create pixel-art KPI dashboards with GitHub, Notion & PyPi data v
 authors = ["Jochen Luithardt <jol@pi-optimal.com>"]
 readme = "README.md"
 
+[tool.poetry.urls]
+repository = "https://github.com/KoOBaALT/pixel_kpi/tree/main"
+
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.32.3"
