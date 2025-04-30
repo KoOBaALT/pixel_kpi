@@ -1,8 +1,24 @@
 # pixel_kpi/displays/pixoo_display.py
 from .base_display import BaseDisplay
-from pixoo import Pixoo
-from pixoo.configurations.simulatorconfiguration import SimulatorConfiguration
+import importlib.util
+import sys
+import logging
 from typing import Tuple
+
+# Check if tkinter is available
+tkinter_available = importlib.util.find_spec("tkinter") is not None
+
+# Only import Pixoo if tkinter is available
+if tkinter_available:
+    try:
+        from pixoo import Pixoo
+        from pixoo.configurations.simulatorconfiguration import SimulatorConfiguration
+    except ImportError as e:
+        if "_tkinter" in str(e):
+            logging.warning("tkinter not found. Install with: 'brew install python-tk' (macOS) or 'apt-get install python3-tk' (Debian/Ubuntu)")
+            tkinter_available = False
+else:
+    logging.warning("tkinter not found. Install with: 'brew install python-tk' (macOS) or 'apt-get install python3-tk' (Debian/Ubuntu)")
 
 class PixooDisplay(BaseDisplay):
     """
@@ -29,6 +45,16 @@ class PixooDisplay(BaseDisplay):
         if self.width != 64 or self.height != 64:
             raise ValueError("Pixoo display must have a resolution of 64x64 pixels.")
 
+        if not tkinter_available:
+            raise ImportError(
+                "The tkinter module is required for Pixoo display. "
+                "Please install it with:\n"
+                "- macOS: brew install python-tk\n"
+                "- Ubuntu/Debian: sudo apt-get install python3-tk\n"
+                "- Fedora: sudo dnf install python3-tkinter\n"
+                "Then reinstall this package."
+            )
+            
         if simulated:
             self.logger.info("Using Pixoo simulator")
             self.pixoo = Pixoo(ip_address, simulated=True, simulation_config=SimulatorConfiguration())
