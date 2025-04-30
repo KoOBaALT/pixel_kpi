@@ -49,8 +49,9 @@ class PackageDownloadView(BaseView):
 
         self.display.clear()
         
-        #Headline.draw(self.display, text="Package: " + self.package_name, position=(0, 0), scale=1, color=self.main_color)
-        Text.draw(self.display, text="Downloads: " + str(display_data["package_downloads"]), position=(2, 10), color=self.main_color)
+        Text.draw(self.display, text=self.package_name, position=(2, 5), color=self.main_color)
+        Text.draw(self.display, text="PyPi", position=(2, 40), color=self.main_color)
+        Text.draw(self.display, text="Downloads: " + str(display_data["package_downloads"]), position=(2, 50), color=self.main_color)
 
 
     def refresh(self) -> None:
