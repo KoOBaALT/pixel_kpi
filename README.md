@@ -28,6 +28,21 @@ Create beautiful pixel-art dashboards for your KPIs! Connect to Notion, GitHub, 
 pip install pixel_kpi
 ```
 
+If you're using Poetry:
+
+```bash
+poetry add pixel_kpi
+```
+
+> **Important:** If you plan to use the Pixoo display (with or without simulation) or the matplotlib display, you'll need tkinter installed through your system package manager:
+> - On macOS: `brew install python-tk`
+> - On Ubuntu/Debian: `sudo apt-get install python3-tk`
+> - On Fedora: `sudo dnf install python3-tkinter`
+> 
+> This is required because tkinter is a system-level dependency that cannot be installed through pip or poetry.
+>
+> **If using the Pixoo device:** Make sure to install tkinter first, then install the package.
+
 2. Create a simple PyPi Download dashboard:
 
 ```python

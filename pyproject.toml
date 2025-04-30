@@ -19,6 +19,9 @@ matplotlib = "^3.9.2"
 pypistats = "^1.8.0"
 ipython = "^8.32.0"
 
+[tool.poetry.extras]
+graphical = []  # This is a marker for the tkinter dependency which has to be installed via system package manager
+
 [tool.poetry.scripts]
 pixel_kpi = "pixel_kpi.__main__:main"
 
