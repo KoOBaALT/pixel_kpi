@@ -41,7 +41,7 @@ def main():
         connector=github_connector,
         processor=star_processor,
         refresh_rate=args.refresh_rate,
-        main_color=(80, 255, 255),
+        main_color=(255, 80, 255),
         repository=args.github_repo
     )
 

@@ -28,7 +28,7 @@ def main():
 
     pypi_connector = PyPiConnector()
 
-    package_download_view = PackageDownloadView(display=display, connector=pypi_connector, processor=None, refresh_rate=60*15, main_color=(80, 255, 255), package_name=args.package_name)
+    package_download_view = PackageDownloadView(display=display, connector=pypi_connector, processor=None, refresh_rate=60*15, main_color=(255, 80, 255), package_name=args.package_name)
 
     package_download_view.run()
 
