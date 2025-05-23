@@ -43,7 +43,7 @@ def main():
         connector=notion_connector,
         processor=notion_sprint_processor,
         refresh_rate=args.refresh_rate,
-        main_color=(80, 255, 255)
+        main_color=(255, 80, 255),
     )
 
     notion_sprint_view.run()
